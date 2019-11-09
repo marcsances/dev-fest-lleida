@@ -1,66 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html amp lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1" />
     <meta name="description" content="How to prepare Brigadeiro" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>How to prepare Brigadeiro</title>
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-video-docking" src="https://cdn.ampproject.org/v0/amp-video-docking-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <!-- Import other AMP Extensions here -->
+    <style amp-custom>
+    :root {
+    --primary-color: #5a4f46;
+    --secondary-color:#97D4D9;
+    --secondary-light-color: #A1D8DD;
+    --ternary-color: #A0916F;
+    --header-color: #fff;
+    --cardBg-color: #fff;
+    --bodyBg-color: #F0EFE9;
+    --title-color: #5A4F46;
+}
+
+  body {
+    font-family: 'Noto Serif', serif;
+    font-size: 18px;
+    background: var(--bodyBg-color);
+    padding: 0;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-family: 'Abril Fatface', cursive;
+  }
+
+  /* ========== HEADER ============= */
+
+  .recipe__header {
+    background: url('https://cdn.glitch.com/0b2012b5-9995-4c4b-945c-601a0c810e65%2Fchocolate.jpg?v=1573256048653');
+    background-size: cover;
+    color: var(--header-color);
+    padding: 2em 1em 0em;
+    text-align: center;
+    margin-bottom: 2em;
+    position: relative;
+  }
+
+  .recipe__header::before {
+      content: "";
+      display: block;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      background-image: linear-gradient(to top, rgba(90, 79, 70, 100%),rgb(90, 79, 70, 35%));
+  }
+
+  .recipe__header .recipe__title::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 150px;
+    background: var(--secondary-color);
+    margin: 1em auto;
+  }
+
+  .recipe__header__menuBtn {
+    display: block;
+    margin: 0 auto;
+    background: var(--header-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 1em;
+  }
+
+  .recipe__title,
+  .recipe__subtitle {
+    margin-top: 0;
+    margin-bottom: 0.4em;
+  }
+
+  .recipe__title {
+    position: relative;
+    padding: 0 20px;
+    display: inline-block;
+  }
+
+  .recipe__subtitle {
+    margin-top: 0;
+  }
+
+  /* =========== NAVIGATION ========== */
+  .recipe__navigation__menu,
+  .recipe__navigation__submenu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recipe__navigation__menu {
+    width: 200px;
+    margin: 0.5em;
+  }
+
+  .recipe__navigation__submenu {
+    margin: 0 0 0 0.5em;
+  }
+
+  .recipe__navigation__item a,
+  .recipe__navigation__item button {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 0.3em;
+    background: var(--ternary-color);
+    color: var(--header-color);
+    text-decoration: none;
+    padding: 0.3em 0.5em 0.3em 2em;
+    display: block;
+    border: none;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .recipe__navigation__item a:hover,
+  .recipe__navigation__item button:hover {
+    color: var(--primary-color);
+    background: var(--header-color);
+  }
+
+  /* ========== CARD ============ */
+
+  .recipe__card {
+    background: var(--cardBg-color);
+    margin: 1em auto 2em;
+    width: 700px;
+    max-width: 100%;
+  }
+
+  .recipe__card__header {
+    background: url('https://cdn.glitch.com/0b2012b5-9995-4c4b-945c-601a0c810e65%2Fbg.png?v=1573256031235');
+    color: var(--header-color);
+    border-bottom: 10px solid var(--ternary-color);
+    padding: 0.3em;
+    text-align: center;
+  }
+
+  .recipe__card__title {
+    margin: 0;
+  }
+
+  .recipe__card__content {
+    padding: 1em;
+  }
+
+  .recipe__card__content h2,
+  .recipe__card__content h3 {
+    text-align: center;
+    color: var(--title-color);
+  }
+
+  .recipe__card__step img,
+  .recipe__thumb {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .recipe__card__step {
+    text-align: center;
+  }
+
+  .recipe__card__carousel {
+    padding-bottom: 1em;
+    border-bottom: 5px dotted var(--secondary-color);
+    margin-bottom: 2.5em;
+  }
+
+  .recipe__share {
+    text-align: center;
+  }
+
+  /* ========== STEPS ========== */
+
+  .recipe__steps__final {
+    width: 700px;
+    height: 100%;
+    max-width: 100%;
+    color: var(--header-color);
+    background: var(--primary-color);
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .recipe__step {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--secondary-color),
+      var(--secondary-color) 30px,
+      var(--secondary-light-color) 30px,
+      var(--secondary-light-color) 60px
+    );
+    padding: 1em;
+    margin: 2em 0;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 30px;
+    min-height: 350px;
+  }
+
+  .recipe__step h2,
+  .recipe__step h3 {
+    color: var(--header-color);
+  }
+
+
+  .recipe__step h2::after,
+  .recipe__step h3::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100px;
+    background: var(--ternary-color);
+    margin: 0.5em auto;
+}
+
+  .recipe__steps__final span {
+    vertical-align: middle;
+  }
+
+  /* ========== SHARE ========== */
+
+  amp-social-share[type='twitter'],
+  amp-social-share[type='facebook'],
+  amp-social-share[type='email'],
+  amp-social-share[type='whatsapp'],
+  amp-social-share[type='linkedin'] {
+    background-color: var(--primary-color);
+  }
+
+  /* ========== FOOTER ============ */
+
+  .recipe__footer {
+    color: var(--header-color);
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    padding: 0.7em;
+    font-size: 12px;
+    background: repeating-linear-gradient(
+      120deg,
+      var(--secondary-color),
+      var(--secondary-color) 30px,
+      var(--secondary-light-color) 30px,
+      var(--secondary-light-color) 60px
+    );
+  }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+ 
+    <link rel="canonical" href=".">
+    
     <link
       href="https://fonts.googleapis.com/css?family=Abril+Fatface|Noto+Serif&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main>
       <header id="top" class="recipe__header">
-        <h1 class="recipe__title">How to prepare Brigadeiro</h1>
+        <h1 class="recipe__title">Com preparar Brigadeiro</h1>
+        <div>
+          
+        </div>
       </header>
+      <button on="tap:menu.toggle" class="recipe__header__menuBtn">
+          menu
+          </button>
+      <amp-sidebar layout="nodisplay" id="menu">
+      
       <nav class="recipe__navigation">
         <ul class="recipe__navigation__menu">
           <li class="recipe__navigation__item">
-            <a href="#about">About</a>
+            <a href="#about">Sobre</a>
           </li>
           <li class="recipe__navigation__item">
             <a href="#ingredients">Ingredients</a>
           </li>
           <li class="recipe__navigation__item">
-            <a href="#steps">Steps to Make It</a>
+            <a href="#steps">Passos per aconseguir-ho</a>
             <ul class="recipe__navigation__submenu">
               <li class="recipe__navigation__item">
-                <a href="#step1">Step 1</a>
+                <a href="#step1">Pas 1</a>
               </li>
               <li class="recipe__navigation__item">
-                <a href="#step2">Step 2</a>
+                <a href="#step2">Pas 2</a>
               </li>
               <li class="recipe__navigation__item">
-                <a href="#step3">Step 3</a>
+                <a href="#step3">Pas 3</a>
               </li>
               <li class="recipe__navigation__item">
-                <a href="#step4">Step 4</a>
+                <a href="#step4">Pas 4</a>
               </li>
               <li class="recipe__navigation__item">
-                <a href="#step5">Step 5</a>
+                <a href="#step5">Pas 5</a>
               </li>
               <li class="recipe__navigation__item">
-                <a href="#step6">Step 6</a>
+                <a href="#step6">Pas 6</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
-      <section class="recipe__about recipe__card" id="about">
+      </amp-sidebar>
+        <section class="recipe__about recipe__card" id="about">
         <header class="recipe__card__header">
           <h2 class="recipe__card__title">Brigadeiro</h2>
         </header>
-        <img src="assets/photo-1.jpg" class="recipe__thumb" />
+        <amp-youtube width="700"
+                 height="700"
+                 layout="responsive"
+                 data-videoid="5n0EFtOuH9s"  
+                     dock>
+        </amp-youtube>
         <div class="recipe__card__content">
           <p>
-            Think of these handheld Brazilian sweets as chocolate truffles by
-            way of the beach. They are a cinch to make and can be rolled in
-            anything from chocolate sprinkles to shredded coconut to cocoa
-            powder.
+            Penseu en aquests dolços brasilers de mà com a tòfones de xocolata a peu de platja. Són un cinch de fabricar i es pot enrotllar en qualsevol cosa, des de ruixats de xocolata fins a coco triturat fins a cacau en pols.
           </p>
         </div>
       </section>
@@ -68,47 +345,62 @@
         <header class="recipe__card__header">
           <h2 class="recipe__card__title">Ingredients</h2>
         </header>
-        <img src="assets/photo-2.jpg" class="recipe__thumb" />
+        <amp-img width="700"
+                 height="700"
+                 layout="responsive"
+                 src="https://cdn.glitch.com/0b2012b5-9995-4c4b-945c-601a0c810e65%2Fphoto-2.jpg?v=1573256059994" >
+        </amp-img>
         <div class="recipe__card__content">
           <ol>
-            <li>2 tablespoons unsalted butter, plus more for hands</li>
-            <li>One (14-ounce) can sweetened condensed milk</li>
-            <li>1/2 cup cocoa powder</li>
-            <li>Pinch Kosher salt 3 ounces chocolate sprinkles</li>
+            <li>2 cullerades de mantega sense sal, més altres per a les mans</li>
+            <li>Una (14 unces) pot endolcir la llet condensada</li>
+            <li>1/2 tassa de cacau en pols</li>
+            <li>Pessigueu sal Kosher 3 unces d'ampolles de xocolata</li>
           </ol>
         </div>
       </section>
       <section class="recipe__steps recipe__card" id="steps">
         <header class="recipe__card__header">
-          <h2 class="recipe__card__title">How to Make It</h2>
+          <h2 class="recipe__card__title">Passos per aconseguir-ho</h2>
         </header>
-        <img src="assets/slide-1.jpg" class="recipe__thumb" />
+        <amp-img  width="700"
+                 height="700"
+                 layout="responsive"
+                 src="https://cdn.glitch.com/0b2012b5-9995-4c4b-945c-601a0c810e65%2Fslide-1.jpg?v=1573256062780" >
+        </amp-img>
         <div class="recipe__card__content">
+          <amp-carousel width="700" height="500" layout="responsive" type="slides">
           <div class="recipe__step">
-            <h3>Step 1</h3>
+            <h3>Pas 1</h3>
             <p>
-              In a medium heavy pot over medium low heat, melt the 2 tablespoons
-              of butter, then stir in the sweetened condensed milk, cocoa powder
-              and salt.
+              Penseu en aquests dolços brasilers de mà com a tòfones de xocolata a peu de platja. Són un cinch de fabricar i es pot enrotllar en qualsevol cosa, des de ruixats de xocolata fins a coco triturat fins a cacau en pols.
             </p>
           </div>
           <div class="recipe__step">
-            <h3>Step 2</h3>
+            <h3>Pas 2</h3>
             <p>
-              Cook the mixture, stirring, until very smooth and slightly
-              thickened, 10 to 12 minutes. Transfer the brigadeiro mixture to a
-              bowl and chill until set, about 30 minutes.
+              Cuinem la barreja, tot remenant, fins que quedi ben suau i lleugerament espessit, de 10 a 12 minuts. Transferiu la barreja de brigadeiro a un bol i refredeu-ho fins que estigui configurat, uns 30 minuts.
             </p>
           </div>
           <div class="recipe__step">
-            <h3>Step 3</h3>
+            <h3>Pas 3</h3>
             <p>
-              With buttered hands, roll 20 tablespoon-size balls. Roll the balls
-              in the chocolate sprinkles. Chill until ready to serve.
+              Amb les mans enmantellades, enrotlla 20 boles de mida cullerada. Enrotlleu les boles en les ruixades de xocolata. Refresc fins que estigui llest per servir.
             </p>
           </div>
+          </amp-carousel>
+          
           <div class="recipe__share">
-            <h3>If you liked this content, Please share!</h3>
+            <h3>Si t'ha agradat aquest contingut, comparteix-ho!</h3>
+          </div>
+          <div class="social-bar">
+            
+            <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+            <amp-social-share type="facebook" width="44" height="44"></amp-social-share>
+            <amp-social-share type="whatsapp" width="44" height="44"></amp-social-share>
+            <amp-social-share type="linkedin" width="44" height="44"></amp-social-share>
+            <amp-social-share type="system" width="44" height="44"></amp-social-share>
+            <amp-social-share type="email" width="44" height="44"></amp-social-share>
           </div>
         </div>
       </section>
@@ -119,3 +411,4 @@
     </main>
   </body>
 </html>
+
